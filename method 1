@@ -1,0 +1,9 @@
+x = int (input("give me a positive integer:"))
+is_prime = "not "
+if x == 2:
+    is_prime = ""
+for i in range (2, int(x**.5)):
+    if x % i == 0:
+        break
+    is_prime = ""
+print("%d is %sa prime number." % (x, is_prime))
