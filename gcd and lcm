@@ -1,0 +1,14 @@
+# find the greatest common divisor and least common multiple of positive integers a and b
+
+a = int(input("the first integer:"))
+b = int(input("the second integer:"))
+x = a; y = b
+if a < b:
+    #c = a; a = b; b = c
+    a, b = b, a
+q = a % b
+while q != 0:
+    a = b; b = q
+    q = a % b
+print ("the greatest common divisor is %d" % b)
+print ("the least common multiple is %d" % (x * y / b))
