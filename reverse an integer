@@ -1,0 +1,7 @@
+import math
+num = input ("give me an integer:")
+l = len(num)
+ans = 0
+for i in range (l):
+    ans += int(num[i])*int(math.pow(10,i))
+print(ans)
