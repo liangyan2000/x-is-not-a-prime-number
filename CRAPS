@@ -31,12 +31,15 @@ else:
                     chips += bet
                     print("you win %d yuan" % bet)
                     print("you now have %d yuan" % chips)
+                    again = input("play again? (y/n) ")
                 elif dice2 == 7:
                     chips -= bet
                     print("you lose %d yuan" % bet)
                     print("you now have %d yuan" % chips)
                     if chips <= 0:
                         print("go home!")
+                        break
+                    again = input("play again? (y/n) ")
                 else:
                     print("you now have %d yuan" % chips)
                     again = input("play again? (y/n) ")
