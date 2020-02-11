@@ -1,0 +1,7 @@
+# 6. Fibonachi sequence (first 20 items)
+a = 1; b =1
+print ("%d, %d" % (a,b), end=", ")
+for i in range (18):
+    c = a + b
+    a = b; b = c
+    print (c, end=", ")
