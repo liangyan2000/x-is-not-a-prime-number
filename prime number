@@ -2,7 +2,7 @@ x = int (input("give me a positive integer:"))
 is_prime = "not "
 if x == 2:
     is_prime = ""
-for i in range (2, int(x**.5)):
+for i in range (2, int(x**.5+1)):
     if x % i == 0:
         break
     is_prime = ""
