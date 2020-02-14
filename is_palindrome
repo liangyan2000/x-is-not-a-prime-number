@@ -1,0 +1,8 @@
+def is_palindrome(a):
+    l = len (a)
+    for i in range (int(l/2)):
+        if a[i] != ans[l-1-i]:
+            return "Not a palindrome"
+    return "Is a palindrome"
+
+print(is_palindrome(input("give me a string or an integer: ")))
