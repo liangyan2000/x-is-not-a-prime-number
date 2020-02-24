@@ -1,0 +1,13 @@
+import random
+def code_gen(code_len):
+    all_chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+    code = ''
+    for _ in range (code_len):
+        index = random.randint(0,61)
+        code += all_chars[index]
+    return code
+def main():
+    code_len = int(input('How long do you want the code to be? '))
+    print('The code is:',code_gen(code_len))
+if __name__== "__main__":
+    main()
