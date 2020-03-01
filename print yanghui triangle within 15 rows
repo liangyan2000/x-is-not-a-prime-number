@@ -1,0 +1,20 @@
+def main():
+    num = int (input('Number of rows: '))
+    yh = [[]] * num                           #[[],[],[]...]
+    
+    for row in range(len(yh)):
+        yh[row] = [None] * (row+1)            # [[None],[None,None],[None,None,None]...]
+        
+        for i in range(60-(row+1)*4):
+            print(' ',end='')                 # where to start each row
+        for col in range(len(yh[row])):
+            if col == 0 or col == row:
+                yh[row][col] = 1              # the first and last entry of each col is '1'
+            else:
+                yh[row][col] = yh[row-1][col-1] + yh[row-1][col] # other entries are the sum of the two entries above it
+            print(yh[row][col],end='')
+            for j in range(8-len(str(yh[row][col]))):  # after printing each entry, leave X spaces adjusted for length of each entry
+                print(' ',end='')
+        print()                               # change line before printing the next row
+if __name__ == "__main__":
+    main()
