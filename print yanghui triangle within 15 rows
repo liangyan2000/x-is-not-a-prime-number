@@ -1,5 +1,5 @@
 def main():
-    num = int (input('Number of rows: '))
+    num = int (input('Number of rows: '))     # num <= 15, otherwise the format is not good
     yh = [[]] * num                           #[[],[],[]...]
     
     for row in range(len(yh)):
