@@ -1,0 +1,16 @@
+def main():
+    persons = [1] * 30
+    count, index, down = 0, 0, 0
+    while down < 15:
+        if persons[index]:
+            count += 1
+            if count == 9:
+                persons[index] = 0
+                down += 1
+                count = 0
+        index += 1
+        index %= 30
+    for index, person in enumerate(persons):
+        print(index+1, '--C ' if person else '--N ', end='\n')
+if __name__ == "__main__":
+    main()
