@@ -1,0 +1,51 @@
+def print_board(board):
+    print(board['11']+'|'+board['12']+'|'+board['13'])
+    print('-+-+-')
+    print(board['21']+'|'+board['22']+'|'+board['23'])
+    print('-+-+-')
+    print(board['31']+'|'+board['32']+'|'+board['33'])
+def winner(curr_board):
+    if (curr_board['11']!=' ' and curr_board['11']==curr_board['12'] and curr_board['11']==curr_board['13']) or \
+    (curr_board['21']!=' ' and curr_board['21']==curr_board['22'] and curr_board['21']==curr_board['23']) or\
+    (curr_board['31']!=' ' and curr_board['31']==curr_board['32'] and curr_board['31']==curr_board['33']) or\
+    (curr_board['11']!=' ' and curr_board['11']==curr_board['22'] and curr_board['11']==curr_board['33']) or\
+    (curr_board['13']!=' ' and curr_board['13']==curr_board['22'] and curr_board['13']==curr_board['31']) or\
+    (curr_board['11']!=' ' and curr_board['11']==curr_board['21'] and curr_board['11']==curr_board['31']) or\
+    (curr_board['12']!=' ' and curr_board['12']==curr_board['22'] and curr_board['12']==curr_board['32']) or\
+    (curr_board['13']!=' ' and curr_board['13']==curr_board['23'] and curr_board['13']==curr_board['33']) :
+        return True
+    else:
+        return False
+def main():
+    init_board={
+        '11':' ','12':' ','13':' ',
+        '21':' ','22':' ','23':' ',
+        '31':' ','32':' ','33':' '
+    }
+    begin=True
+    while begin:
+        curr_board = init_board.copy()
+        begin = False
+        turn = 'x'
+        counter = 0
+        
+        print_board(curr_board)
+        while counter < 9:
+            move = input ("%s's turn:" % turn)
+            if curr_board[move] == ' ':
+                counter += 1
+                curr_board[move] = turn
+                if winner(curr_board):
+                    print('%s wins!' % turn)
+                    break
+                if turn == 'x':
+                    turn = 'o'
+                else:
+                    turn = 'x'
+            
+            print_board(curr_board)
+            
+        choice = input('play again? (y|n):')
+        begin = choice == 'y'
+if __name__ == "__main__":
+    main()
